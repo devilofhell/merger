@@ -37,7 +37,7 @@ public class Interval {
     }
 
     /**
-     * returns true, if
+     * @returns true, if
      *
      *       this instance
      *          <     >
@@ -52,7 +52,7 @@ public class Interval {
 
 
     /**
-     * returns true, if beginning or ending of this instance is part of baseInterval
+     * @returns true, if beginning or ending of this instance is part of baseInterval
      *
      *   this instance
      *    <        >
@@ -66,7 +66,7 @@ public class Interval {
      *     <        >
      *    baseInterval
      *
-     * returns false, if overlapping borders or separate
+     * @returns false, if overlapping borders or separate
      *          this instance
      *              <      >
      *   ...[.......x......]...

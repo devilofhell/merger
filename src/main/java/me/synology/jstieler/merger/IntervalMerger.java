@@ -24,21 +24,21 @@ public class IntervalMerger {
         if (list.size() == 0 || list.size() == 1)
             return list;
 
-        for (int i = 0; i < list.size(); i++){
-            Interval baseInterval = list.get(i);
+        for (int b = 0; b < list.size(); b++){
+            Interval baseInterval = list.get(b);
 
-            for (int j = i+1; j < list.size(); j++){
-                Interval currentInterval = list.get(j);
+            for (int c = b+1; c < list.size(); c++){
+                Interval currentInterval = list.get(c);
 
                 if (currentInterval.isWithin(baseInterval)){
-                    list.remove(j);
-                    j--;
+                    list.remove(c);
+                    c--;
                     continue;
                 }
                 if (currentInterval.isPartOf(baseInterval)){
                     currentInterval.resizeBoardersWith(baseInterval);
-                    list.remove(i);
-                    i--;
+                    list.remove(b);
+                    b--;
                     break;
                 }
             }
