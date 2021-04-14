@@ -15,12 +15,13 @@ public class IntervalMerger {
         StringBuilder sb = new StringBuilder();
         for (Interval i : list){
             sb.append(i.toString());
-            sb.append(" ");
         }
         return sb.toString();
     }
 
-    public static List<Interval> mergeIntervals(List<Interval> list){
+    public static List<Interval> mergeIntervals(String[] input){
+        List<Interval> list = parseIntervals(input);
+
         if (list.size() == 0 || list.size() == 1)
             return list;
 
@@ -46,7 +47,10 @@ public class IntervalMerger {
         return list;
     }
 
-    public static List<Interval> parseIntervals (String[] args){
+    private static List<Interval> parseIntervals (String[] args){
+        if (args.length == 0)
+            System.out.println("No arguments detected. Try adding numbers in the format: \"x,y\" or \"(x,y)\" or \"[x,y]\" or \"x,y a,b ...\"");
+
         List<Interval> result = new ArrayList<>();
 
         for (String s : args){

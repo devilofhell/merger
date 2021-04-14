@@ -10,11 +10,8 @@ import java.util.List;
 public class MergerApplication {
 
     public static void main (String[] args){
-        if (args.length == 0)
-            System.out.println("No arguments detected. Try adding numbers in the format: \"x,y\" or \"(x,y)\" or \"[x,y]\" or \"x,y a,b ...\"");
+        List<Interval> result = IntervalMerger.mergeIntervals(args);
 
-        List<Interval> input = IntervalMerger.parseIntervals(args);
-
-        IntervalMerger.printIntervalList(IntervalMerger.mergeIntervals(input));
+        IntervalMerger.printIntervalList(result);
     }
 }
