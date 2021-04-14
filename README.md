@@ -8,9 +8,9 @@ Example:
 ```sh
 gradlew bootRun --args "[25,30] [2,19] [14, 23] [4,8]" 
  
-> [25,30] [2,23] 
+> [2,23][25,30]
 ```
-The result will not be ordered.
+The result will be ordered.
 
 ## Requirements
 
