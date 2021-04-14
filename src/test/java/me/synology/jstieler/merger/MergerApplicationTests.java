@@ -19,7 +19,7 @@ class MergerApplicationTests {
 
         assertThat(output.size()).isEqualTo(2);
         assertThat(output.get(0).isPartOf(output.get(1))).isFalse();
-        assertThat(IntervalMerger.getIntervalAsString(output)).isEqualTo("[25,30][2,23]");
+        assertThat(IntervalMerger.getIntervalAsString(output)).isEqualTo("[2,23][25,30]");
     }
 
     @Test
@@ -92,7 +92,7 @@ class MergerApplicationTests {
         List<Interval> output = IntervalMerger.mergeIntervals(input);
 
         assertThat(output.size()).isEqualTo(2);
-        assertThat(IntervalMerger.getIntervalAsString(output)).isEqualTo("[31,66][2,30]");
+        assertThat(IntervalMerger.getIntervalAsString(output)).isEqualTo("[2,30][31,66]");
     }
 
 }
