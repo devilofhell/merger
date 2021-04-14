@@ -46,13 +46,15 @@ public class IntervalMerger {
                 result.add(parseSingleInterval(s));
             } catch (NumberFormatException e){
                 System.out.println("Argument '" + s + "' can not be parsed. Argument will be skipped.");
+            } catch (ArrayIndexOutOfBoundsException e){
+                System.out.println("Argument '" + s + "' can not be parsed. No comma \',\' detected .");
             }
         }
 
         return result;
     }
 
-    private static Interval parseSingleInterval(String s) throws NumberFormatException {
+    private static Interval parseSingleInterval(String s) {
         s = s.replace("[", "");
         s = s.replace("]", "");
         s = s.replace("(", "");
